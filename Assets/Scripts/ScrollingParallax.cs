@@ -6,12 +6,15 @@ public class ScrollingParallax : MonoBehaviour
 {
     private float length, startPos;
     public GameObject cam;
+    public float camSpeed = 2.0f;
+    float camPosX = 0;
     public float parallaxEffect;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position.x;
+        camPosX = Camera.main.transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
@@ -30,5 +33,8 @@ public class ScrollingParallax : MonoBehaviour
         {
             startPos -= length;
         }
+
+        camPosX += camSpeed * Time.deltaTime;
+        cam.transform.position = new Vector3(camPosX, cam.transform.position.y, cam.transform.position.z);
     }
 }
