@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         gameObject.transform.Translate(new Vector3(-7.0f*Time.deltaTime, 0.0f, 0.0f));
 
-        if(engine_Failure == false)
+        if (engine_Failure == false)
         {
             if (Input.GetMouseButton(0))
             {
@@ -35,17 +35,17 @@ public class Player : MonoBehaviour
                 rigidbody2D.velocity *= 0.25f;
             }
         }
-        else if(engine_Failure == true)
+        else if (engine_Failure == true)
         {
-             //rigidbody2D.velocity *= 0.5f;
+            //rigidbody2D.velocity *= 0.5f;
             if (Input.GetMouseButtonDown(0))
             {
                 click_Number++;
 
             }
 
-           // time_target -= Time.deltaTime;
-            if(click_Number >= 5)
+            // time_target -= Time.deltaTime;
+            if (click_Number >= 5)
             {
                 engine_Failure = false;
                 rigidbody2D.AddForce(new Vector3(0, Force_Up + Bonus_boost, 0), ForceMode2D.Force);
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
                 //time_target = 1.0f;
             }
         }
-        
-       
+
+
     }
 }
