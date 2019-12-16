@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+   public float Player_Score;
     public int click_Number;
     public bool engine_Failure;
     Rigidbody2D rigidbody2D;
+    public float max_Y_Vel;
+    public float min_Y_Vel;
     //public float time_target = 1.0f;
     public  float Force_Up;
     public float Bonus_boost;
@@ -28,12 +31,13 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 rigidbody2D.AddForce(new Vector3(0, Force_Up, 0), ForceMode2D.Force);
-
+              
             }
             else if (Input.GetMouseButtonUp(0))
             {
                 rigidbody2D.velocity *= 0.25f;
             }
+           
         }
         else if (engine_Failure == true)
         {
@@ -53,7 +57,14 @@ public class Player : MonoBehaviour
                 //time_target = 1.0f;
             }
         }
-
+        if(rigidbody2D.velocity.y > 10.0f)
+        {
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 10.0f);
+        }
+        if (rigidbody2D.velocity.y < -10.0f)
+        {
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, -10.0f);
+        }
 
     }
 }
