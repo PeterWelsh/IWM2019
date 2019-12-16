@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public int click_Number;
     public bool engine_Failure;
     Rigidbody2D rigidbody2D;
-    float time_target = 1.0f;
+    //public float time_target = 1.0f;
+    public  float Force_Up;
+    public float Bonus_boost;
     // Start is called before the first frame update
     void Start()
     {
+       // click_Number = 0;
         rigidbody2D = GetComponent<Rigidbody2D>();
         engine_Failure = false;
     }
@@ -24,7 +27,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                rigidbody2D.AddForce(new Vector3(0, 50, 0), ForceMode2D.Force);
+                rigidbody2D.AddForce(new Vector3(0, Force_Up, 0), ForceMode2D.Force);
 
             }
             else if (Input.GetMouseButtonUp(0))
@@ -34,13 +37,20 @@ public class Player : MonoBehaviour
         }
         else if(engine_Failure == true)
         {
-           // rigidbody2D.velocity *= 0.25f;
+             //rigidbody2D.velocity *= 0.5f;
+            if (Input.GetMouseButtonDown(0))
+            {
+                click_Number++;
 
-            time_target -= Time.deltaTime;
-            if(time_target <= 0.0f)
+            }
+
+           // time_target -= Time.deltaTime;
+            if(click_Number >= 5)
             {
                 engine_Failure = false;
-                time_target = 1.0f;
+                rigidbody2D.AddForce(new Vector3(0, Force_Up + Bonus_boost, 0), ForceMode2D.Force);
+                click_Number = 0;
+                //time_target = 1.0f;
             }
         }
         
