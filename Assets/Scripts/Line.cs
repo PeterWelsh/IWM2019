@@ -53,7 +53,7 @@ public class Line : MonoBehaviour
         spriteRenderer.sprite = warning;
         alarm = true;
         on = true;
-        Debug.Log("WARNING");
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

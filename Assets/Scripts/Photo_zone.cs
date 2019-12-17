@@ -34,10 +34,36 @@ public class Photo_zone : MonoBehaviour
     {
         if(photoState != pev_photoState)
         {
-            Debug.Log(photoState);
+
             pev_photoState = photoState;
         }
-        if(Input.GetMouseButtonDown(1))
+        
+
+
+            if (over_zone == true)
+            {
+                switch (photoState)
+                {
+                    case PhotoState.Norm:
+                        spriteRenderer.color = new Color32(0, 249, 255, 255);
+                        break;
+                    case PhotoState.poor:
+
+                        spriteRenderer.color = new Color32(224, 0, 0, 255);
+                        break;
+                    case PhotoState.good:
+
+                        spriteRenderer.color = new Color32(255, 246, 102, 255);
+                        break;
+                    case PhotoState.excellent:
+
+                        spriteRenderer.color = new Color32(0, 244, 64, 255);
+                        break;
+                }
+                // over_zone = false;
+            }
+
+        if (Input.GetMouseButtonDown(1))
         {
             if (over_zone == true)
             {
@@ -52,18 +78,21 @@ public class Photo_zone : MonoBehaviour
                         player.Player_Score -= 5;
                         child_prompt.sprite = Spoor;
                         promptSprite.SetActive(true);
+                        spriteRenderer.color = new Color32(224, 0, 0, 255);
 
                         break;
                     case PhotoState.good:
                         player.Player_Score += 5;
                         child_prompt.sprite = Sgood;
                         promptSprite.SetActive(true);
+                        spriteRenderer.color = new Color32(255, 246, 102, 255);
 
                         break;
                     case PhotoState.excellent:
                         player.Player_Score += 10;
                         child_prompt.sprite = Sexcellent;
                         promptSprite.SetActive(true);
+                        spriteRenderer.color = new Color32(0, 244, 64, 255);
                         break;
                 }
                 over_zone = false;
@@ -72,28 +101,7 @@ public class Photo_zone : MonoBehaviour
            
         }
 
-        if (over_zone == true)
-        {
-            switch (photoState)
-            {
-                case PhotoState.Norm:
-                    spriteRenderer.color = new Color32(0, 249, 255, 255);
-                    break;
-                case PhotoState.poor:
-                    
-                    spriteRenderer.color = new Color32(224, 0, 0, 255);
-                    break;
-                case PhotoState.good:
-                    
-                    spriteRenderer.color = new Color32(255, 246, 102, 255);
-                    break;
-                case PhotoState.excellent:
-                   
-                    spriteRenderer.color = new Color32(0, 244, 64, 255);
-                    break;
-            }
-           // over_zone = false;
-        }
+        
 
     }
 
