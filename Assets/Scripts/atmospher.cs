@@ -29,7 +29,7 @@ public class atmospher : MonoBehaviour
         if (out_off_bounds == true)
         {
             timer -= Time.deltaTime;
-            Debug.Log(timer);
+
             if(timer <= 0.0f)
             {
                 player.engine_Failure = true;

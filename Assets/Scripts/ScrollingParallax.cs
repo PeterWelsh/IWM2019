@@ -74,7 +74,7 @@ public class ScrollingParallax : MonoBehaviour
         cam.transform.position = new Vector3(camPosX , camPosY, cam.transform.position.z);
 
         
-        Debug.Log(camPosY);
+
         
         //cam.transform.position = new Vector3(startPos + plane.transform.position.x, 0.0f, 0.0f);
         //cam.transform.Translate(new Vector3((7.0f * (parallaxEffect * Time.deltaTime)), 0.0f, 0.0f));
