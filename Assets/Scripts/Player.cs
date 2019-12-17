@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(new Vector3(-7.0f*Time.deltaTime, 0.0f, 0.0f));
+        gameObject.transform.Translate(new Vector3(7.0f*Time.deltaTime, 0.0f, 0.0f));
 
         if (engine_Failure == false)
         {
