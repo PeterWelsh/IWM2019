@@ -5,19 +5,25 @@ using UnityEngine;
 public class atmospher : MonoBehaviour
 {
     public GameObject GameObject;
+    public GameObject Warn;
     Player player;
+    public Sprite warning;
+    SpriteRenderer spriteRenderer;
     bool out_off_bounds;
     float timer = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.GetComponent<Player>();
+        spriteRenderer = Warn.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(out_off_bounds == true)
+        gameObject.transform.Translate(new Vector3(7.0f * Time.deltaTime, 0.0f, 0.0f));
+
+        if (out_off_bounds == true)
         {
             timer -= Time.deltaTime;
             Debug.Log(timer);
@@ -33,6 +39,9 @@ public class atmospher : MonoBehaviour
         if (collision.gameObject == GameObject)
         {   
             out_off_bounds = true;
+            Warn.SetActive(true);
+            spriteRenderer.sprite = warning;
+
         }
     }
 
@@ -41,6 +50,7 @@ public class atmospher : MonoBehaviour
         if (collision.gameObject == GameObject)
         {
             out_off_bounds = false;
+            Warn.SetActive(false);
             timer = 2.0f;
         }
     }
