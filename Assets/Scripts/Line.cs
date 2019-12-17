@@ -10,8 +10,12 @@ public class Line : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public GameObject GameObject;
     public GameObject Warn;
+    public GameObject rocket;
     bool alarm;
     bool on;
+    bool end;
+
+    float deathTimer = 3.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +43,22 @@ public class Line : MonoBehaviour
                 on = true;
                 timer = 0.05f;
             }
+
+            deathTimer -= Time.deltaTime;
+
+           if (deathTimer <= 0 && end == false)
+            {
+                Instantiate(rocket);
+                end = true;
+            }
         }
         else if(alarm == false)
         {
             synth.EndNote();
         }
+
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
