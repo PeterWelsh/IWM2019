@@ -466,11 +466,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    characterName: Dr Robotnik
+    characterName: General B. Mann
     sentences:
-    - Hahahahahahahaha. Nice try Sonic
-    - Prepare to face my finest creation yet
-    - NUCLEAR WAAAAAR!!!
+    - Good morning Major, in this briefing I will be going over some details about
+      your next mission at the soviet borders.
+    - 'Recently there have been a lot of soviet troop movements and we need to know
+      what those commies are up to! '
+    - "You will be flying one of our SR-71\u2019s or \u201CBlackbirds\u201D for this
+      mission as discretion is of utmost importance, they cannot know we are there.
+      We only made 32 of these beauties so be careful with her Major."
+    - "Once airborne you will need to fly and stay at around 80,000 feet to avoid
+      their radars. And remember, if they send any MiG-31\u2019s after you, you\u2019ve
+      got those twin turbojet engines, pump them to mach 3.3 and outrun them!"
+    - "Several photos of their movements and troop locations need to be taken for
+      our reconnaissance teams back home to study so we know what they\u2019re up
+      to."
+    - Time is important here, but we have some leeway. Are you ready to take your
+      blackbird out for the mission tomorrow at 2200?
 --- !u!1 &580623311
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -156.8, y: -0.000005722}
+  m_AnchoredPosition: {x: -153, y: -11.585}
   m_SizeDelta: {x: 427.23, y: 427.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165327902
@@ -913,7 +925,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3df376c1103b8d441a81c91109659bf9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e90bdd82b406ee7429f6e10ed1c2dc65, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
