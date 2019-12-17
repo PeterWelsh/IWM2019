@@ -29,7 +29,7 @@ public class Line : MonoBehaviour
             timer -= Time.deltaTime;
             if(timer <= 0 && on == true)
             {
-                synth.playNote(1831);
+                synth.playNote(-1831);
                 on = false;
                 timer = 0.05f;
             }

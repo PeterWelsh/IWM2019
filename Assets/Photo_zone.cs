@@ -11,7 +11,7 @@ public class Photo_zone : MonoBehaviour
     public float score;
     bool over_zone;
 
-    public enum PhotoState { poor,good,excellent}
+    public enum PhotoState {Norm, poor,good,excellent}
     public PhotoState photoState;
     PhotoState pev_photoState;
     // Start is called before the first frame update
@@ -38,17 +38,20 @@ public class Photo_zone : MonoBehaviour
             {
                 switch (photoState)
                 {
+                    case PhotoState.Norm:
+                        
+                        break;
                     case PhotoState.poor:
                         player.Player_Score -= 5;
-                        spriteRenderer.color = new Color(1,0,0,0.5f); 
+                       
                         break;
                     case PhotoState.good:
                         player.Player_Score += 5;
-                        spriteRenderer.color = new Color(1, 0.92f, 0.016f, 0.5f);
+                        
                         break;
                     case PhotoState.excellent:
                         player.Player_Score += 10;
-                        spriteRenderer.color = new Color(0, 1, 0, 0.5f);
+                      
                         break;
                 }
                 over_zone = false;
@@ -56,7 +59,30 @@ public class Photo_zone : MonoBehaviour
            
            
         }
-       
+
+        if (over_zone == true)
+        {
+            switch (photoState)
+            {
+                case PhotoState.Norm:
+                    spriteRenderer.color = new Color32(0, 249, 255, 255);
+                    break;
+                case PhotoState.poor:
+                    
+                    spriteRenderer.color = new Color32(224, 0, 0, 255);
+                    break;
+                case PhotoState.good:
+                    
+                    spriteRenderer.color = new Color32(255, 246, 102, 255);
+                    break;
+                case PhotoState.excellent:
+                   
+                    spriteRenderer.color = new Color32(0, 244, 64, 255);
+                    break;
+            }
+           // over_zone = false;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

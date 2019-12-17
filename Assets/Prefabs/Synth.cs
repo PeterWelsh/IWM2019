@@ -38,7 +38,7 @@ public class Synth : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
 
-            playNote(1831);
+            playNote(-831);
             //gain = volume;
             //frequ = frequencies[thisFreq];
             //thisFreq++;

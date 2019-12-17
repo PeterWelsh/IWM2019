@@ -7,6 +7,7 @@ public class atmospher : MonoBehaviour
     public GameObject GameObject;
     public GameObject Warn;
     Player player;
+    Synth synth;
     public Sprite warning;
     SpriteRenderer spriteRenderer;
     bool out_off_bounds;
@@ -15,6 +16,7 @@ public class atmospher : MonoBehaviour
     void Start()
     {
         player = GameObject.GetComponent<Player>();
+        synth = GameObject.GetComponent<Synth>();
         spriteRenderer = Warn.GetComponent<SpriteRenderer>();
     }
 
@@ -31,7 +33,13 @@ public class atmospher : MonoBehaviour
             {
                 player.engine_Failure = true;
             }
+
+
+
+           
+
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
