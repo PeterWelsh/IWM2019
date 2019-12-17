@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class Player : MonoBehaviour
    public GameObject Rocket;
     public bool dead;
     public Animator animator;
+    public GameObject panel;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +28,7 @@ public class Player : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         engine_Failure = false;
+        panel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,10 +83,20 @@ public class Player : MonoBehaviour
             }
 
         }
-        
 
-
+        if (dead == true)
+        {
+            panel.SetActive(true);
+        }
     }
 
-   
+    public void Restart()
+    {
+        SceneManager.LoadScene("CombinedScene");
+    }
+
+    public void QuitLevel()
+    {
+        SceneManager.LoadScene("Ending");
+    }
 }

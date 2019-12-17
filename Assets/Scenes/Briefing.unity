@@ -598,6 +598,7 @@ MonoBehaviour:
   nameText: {fileID: 1825875763}
   speechText: {fileID: 680187122}
   animator: {fileID: 1035941341}
+  scene: 2
 --- !u!4 &608486764
 Transform:
   m_ObjectHideFlags: 0
