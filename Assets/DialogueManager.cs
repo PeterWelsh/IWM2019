@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
     public Text nameText, speechText;
     public Animator animator;
+    public int scene;
 
     private Queue<string> sentences;
 
@@ -58,5 +60,6 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of conversation");
         animator.SetBool("isOpen", false);
+        SceneManager.LoadScene(scene);
     }
 }

@@ -703,7 +703,7 @@ MonoBehaviour:
     - Images taken over Cuba have revealed no new threats or installations in Cuba
       at this time. However soviet troops movements continue.
     - "Your latest findings in soviet territory have spurred on our contractors to
-      start work on what they\u2019re calling the F-15, which will roval the soviets
+      start work on what they\u2019re calling the F-15, which will rival the soviets
       latest MiGs, making our great nation safer."
     - Well done again on a successful mission, Major.
 --- !u!4 &1504523342
@@ -943,6 +943,7 @@ MonoBehaviour:
   nameText: {fileID: 1486486445}
   speechText: {fileID: 1561711001}
   animator: {fileID: 536318289}
+  scene: 0
 --- !u!4 &1701498111
 Transform:
   m_ObjectHideFlags: 0
