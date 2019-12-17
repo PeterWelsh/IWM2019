@@ -6,6 +6,7 @@ public class atmospher : MonoBehaviour
 {
     public GameObject GameObject;
     public GameObject Warn;
+
     Player player;
     Synth synth;
     public Sprite warning;
