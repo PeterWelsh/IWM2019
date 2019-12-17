@@ -61,7 +61,7 @@ public class ScrollingParallax : MonoBehaviour
         camPosX = camStartPos.x + planePos.x;
         camPosY = camStartPos.y + planePos.y;
 
-        if (camPosY < -5.8f)
+        if (camPosY <  - 4.4f)
         {
             camPosY = -4.4f;
         }
