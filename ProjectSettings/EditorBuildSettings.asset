@@ -9,15 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9cb6b56c039bd9a4bb319edc33ea3bde
   - enabled: 1
-    path: Assets/Scenes/Scrolling Scene.unity
-    guid: 78c433eddb5097f41b7b23abc1192e2c
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Player_Test.unity
-    guid: be8622e45ac5adf408e038e8a7926125
-  - enabled: 1
     path: Assets/Scenes/Briefing.unity
     guid: 029483f50b6be3641a4a0d37e99c234b
+  - enabled: 1
+    path: Assets/Scenes/CombinedScene.unity
+    guid: a5f5f64def1d16a4eb0cadbfa44f159a
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 0c1b78a0db1461c4aac8c2c0d212e407
+  - enabled: 0
+    path: Assets/Scenes/Scrolling Scene.unity
+    guid: 78c433eddb5097f41b7b23abc1192e2c
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/Player_Test.unity
+    guid: be8622e45ac5adf408e038e8a7926125
   m_configObjects: {}
