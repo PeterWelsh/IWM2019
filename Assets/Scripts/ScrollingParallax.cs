@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ScrollingParallax : MonoBehaviour
 {
-    private float length, startPos;
+    private float length, height, startPosX, startPosY;
     public GameObject cam;
     public GameObject plane;
-    public float parallaxEffect;
+    public float parallaxEffectX, parallaxEffectY;
     public float camSpeed;
-    float camPosX = 0;
+    public float camPosX, camPosY;
     Vector3 camStartPos, planePos;
 
     private void Awake()
@@ -20,30 +20,62 @@ public class ScrollingParallax : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position.x;
+        startPosX = transform.position.x;
+        startPosY = transform.position.y;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
+        height = GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
     private void Update()
     {
         planePos = plane.transform.position;
 
-        float temp = (cam.transform.position.x * (1 - parallaxEffect));
-        float dist = (cam.transform.position.x * parallaxEffect);
+        float temp = (cam.transform.position.x * (1 - parallaxEffectX));
+        float dist = (cam.transform.position.x * parallaxEffectX);
 
-        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
+        float temp2 = (cam.transform.position.y * (1 - parallaxEffectY));
+        float dist2 = (cam.transform.position.y * parallaxEffectY);
 
-        if (temp > startPos + length)
+        transform.position = new Vector3(startPosX + dist, startPosY + dist2, transform.position.z);
+
+        if (temp > startPosX + length)
         {
-            startPos += length;
+            startPosX += length;
         }
-        else if (temp < startPos - length)
+        else if (temp < startPosX - length)
         {
-            startPos -= length;
+            startPosX -= length;
+        }
+        
+
+        if (temp2 > startPosY + height)
+        {
+            startPosY += height;
+        }
+        else if (temp2 < startPosY - height)
+        {
+            startPosY -= height;
         }
 
-        camPosX += (camSpeed * Time.deltaTime);
-        cam.transform.position = new Vector3(camStartPos.x + planePos.x, cam.transform.position.y, cam.transform.position.z);
+        //camPosX += (camSpeed * Time.deltaTime);
+        camPosX = camStartPos.x + planePos.x;
+        camPosY = camStartPos.y + planePos.y;
+
+        if (camPosY < -5.8f)
+        {
+            camPosY = -4.4f;
+        }
+
+        if (camPosY > 12f)
+        {
+            camPosY = 12f;
+        }
+
+        cam.transform.position = new Vector3(camPosX , camPosY, cam.transform.position.z);
+
+        
+        Debug.Log(camPosY);
+        
         //cam.transform.position = new Vector3(startPos + plane.transform.position.x, 0.0f, 0.0f);
         //cam.transform.Translate(new Vector3((7.0f * (parallaxEffect * Time.deltaTime)), 0.0f, 0.0f));
     }
